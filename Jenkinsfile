@@ -1,18 +1,15 @@
-pipeline{
-agent any
-stages 
-{
-stage('install') 
-{
-steps{
-npm install
-}
-}
-stage('build') 
-{
-steps{
-npm run build
-}
-}
-}
+pipeline {
+    agent none 
+    stages {
+        stage('install packages ') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Example Test') {
+            steps {
+                sh 'npm run build --prod'
+            }
+        }
+    }
 }
