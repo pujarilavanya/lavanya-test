@@ -20,11 +20,11 @@ steps{
 echo "Build docker image  the Project.........."
 
 }
+}
 stage('Deploy') 
 {
 steps{
 echo "Deploying the Project.........."
-}
 }
 }
 }
