@@ -2,24 +2,23 @@ pipeline{
 agent any
 stages 
 {
-stage('Build') 
+stage('install') 
 {
 steps{
-echo "Building the Code.........."
+npm install
 }
 }
-stage('Test') 
+stage('build') 
 {
 steps{
-echo "Testing the Code.........."
+npm run build
 }
 }
-stage('Build coker image ') 
+stage('Build docker image ') 
 {
 steps{
 echo "Build docker image  the Project.........."
-sh  "docker build -t lavayna/jenkins-angular-app ."
-}
+
 }
 stage('Deploy') 
 {
